@@ -2,7 +2,7 @@ const totalQuestions = 24;
 let score = 0;
 
 function evaluateAnswer(questionNumber, correctAnswer, scoreToAdd) {
-  const userAnswer = document.getElementById(`answer${questionNumber}`);
+  const userAnswer = document.getElementById(`answer${questionNumber}`).value;
   const resultContainer = document.getElementById("quizContainer");
 
   if (userAnswer === correctAnswer) {
@@ -29,7 +29,7 @@ evaluateButton.addEventListener("click", function () {
   score = 0;
 
   for (let i = 1; i <= totalQuestions; i++) {
-    evaluateAnswer1(i, "4", 3.5);
+    evaluateAnswer(i, "4", 3.5);
     evaluateAnswer2(i, "3", 3.5);
     evaluateAnswer3(i, "2", 3.5);
     evaluateAnswer4(i, "5", 3.6);
@@ -59,5 +59,3 @@ evaluateButton.addEventListener("click", function () {
 });
 
 quizContainer.appendChild(evaluateButton);
-
-//국어 29% 수학 30% 영어 22%
